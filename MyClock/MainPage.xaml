@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyClock.MainPage">
+
+    <Grid BackgroundColor="White" RowDefinitions="*" ColumnDefinitions="*">
+        <Grid>
+            <Image Source="dial_w_trans.png" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="350"></Image>
+            <BoxView BackgroundColor="Transparent" Color="#242424" WidthRequest="5" HeightRequest="140" VerticalOptions="Center" HorizontalOptions="Center" >
+                <BoxView.Rotation>
+                    <Binding Path="HourRotation" />
+                </BoxView.Rotation>
+                <BoxView.AnchorX>0.5</BoxView.AnchorX>
+                <BoxView.AnchorY>0.5</BoxView.AnchorY>
+                <BoxView.Clip>
+                    <RectangleGeometry Rect="0,0,5,70" />
+                </BoxView.Clip>
+            </BoxView>
+            <BoxView BackgroundColor="Transparent" Color="#171717" WidthRequest="3" HeightRequest="180" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                <BoxView.Rotation>
+                    <Binding Path="MinuteRotation" />
+                </BoxView.Rotation>
+                <BoxView.AnchorX>0.5</BoxView.AnchorX>
+                <BoxView.AnchorY>0.5</BoxView.AnchorY>
+                <BoxView.Clip>
+                    <RectangleGeometry Rect="0,0,3,90" />
+                </BoxView.Clip>
+            </BoxView>
+            <BoxView BackgroundColor="Transparent" Color="#ff4545" WidthRequest="2" HeightRequest="220" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                <BoxView.Rotation>
+                    <Binding Path="SecondRotation" />
+                </BoxView.Rotation>
+                <BoxView.AnchorX>0.5</BoxView.AnchorX>
+                <BoxView.AnchorY>0.5</BoxView.AnchorY>
+                <BoxView.Clip>
+                    <RectangleGeometry Rect="0,0,2,110" />
+                </BoxView.Clip>
+            </BoxView>
+            <Ellipse Fill="Black" WidthRequest="10" HeightRequest="10" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>
